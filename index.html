@@ -1,13 +1,53 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recetas de Cocina</title>
     <link rel="stylesheet" href="./css/styles.css">
-    <title>Index</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
 </head>
 <body>
-    
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <img src="./img/logo_gerenico.png" alt="Logo del sitio">
+            </div>
+            <div class="search-bar">
+                <form id="form-busqueda">
+                    <input type="text" id="input-busqueda" placeholder="Buscar recetas...">
+                    <button type="submit">Buscar</button>
+                </form>
+            </div>
+            <ul class="menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="categories.html">Categorías</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="register.html">Registro</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="section">
+            <h1>Descubre tus Recetas Favoritas</h1>
+            <p>Explora, cocina y disfruta.</p>
+        </section>
+
+        <section class="recetas">
+            <h2>Recetas destacadas</h2>
+            <div class="recetas-container" id="recetas-lista">
+                <!-- Recetas dinámicas -->
+            </div>
+            <button id="btn-cargar-mas">Cargar más</button>
+        </section>
+    </main>
+
+
+    <footer>
+        <p>© 2024 Recetas de Cocina. Creado por: [Tu nombre o equipo]</p>
+    </footer>
+
     <script src="./js/index.js"></script>
 </body>
 </html>

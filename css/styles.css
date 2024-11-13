@@ -1,0 +1,86 @@
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #F4F4F4;
+    color: #5A4B3F;
+}
+h1, h2, h3, .menu a, button {
+    font-family: 'Poppins', sans-serif;
+}
+button {
+    background-color: #A68A64;
+    color: #F4F4F4;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+button:hover {
+    background-color: #967d68;
+}
+header, footer {
+    background-color: #5A4B3F;
+    color: #F4F4F4;
+    padding: 15px;
+}
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.logo img {
+    width: 120px;
+}
+.menu {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+.menu a {
+    color: #F4F4F4;
+    text-decoration: none;
+    font-weight: 600;
+}
+.search-bar {
+    display: flex;
+    margin-left: 10%;
+}
+.search-bar input {
+    padding: 8px;
+    border: 1px solid #C2BEBE;
+    border-radius: 5px;
+}
+.search-bar button {
+    padding: 8px 15px;
+}
+.section {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #E0E0E0;
+}
+.section h1 {
+    font-weight: 600;
+    color: #5A4B3F;
+}
+.section p {
+    color: #A68A64;
+}
+.recetas {
+    padding: 20px;
+    text-align: center;
+}
+.recetas h2 {
+    color: #5A4B3F;
+}
+.recetas-container {
+    display: grid;
+    padding: 20px;
+}
+footer {
+    text-align: center;
+    padding: 10px;
+}
