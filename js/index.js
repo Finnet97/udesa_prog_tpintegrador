@@ -15,11 +15,13 @@ fetch('https://dummyjson.com/recipes')
         const receta = data.recipes[i];
 
         recetas += `
-            <article>
-                <img src="${receta.image}" alt="${receta.name}">
-                <p>${receta.name}</p>
-                <p>${receta.difficulty}</p>
-            </article>
+            <a href="">
+                <article>
+                    <img src="${receta.image}" alt="${receta.name}">
+                    <p>${receta.name}</p>
+                    <p>${receta.difficulty}</p>
+                </article>
+            </a>
         `;
     }
 

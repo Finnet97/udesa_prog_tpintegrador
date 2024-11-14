@@ -99,6 +99,11 @@ header, footer {
     color: #cfa37f;
 }
 
+.recetas-container a {
+    text-decoration: none;
+    color: #cfa37f;
+}
+
 .recetas-container {
     display: flex;
     padding: 20px;
