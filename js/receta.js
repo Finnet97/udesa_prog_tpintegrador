@@ -22,8 +22,8 @@ fetch(`https://dummyjson.com/recipes/${recetaID}`)
     imagen.src = data.image;  
     nombre.textContent = data.name;  
     instrucciones.textContent = data.instructions;  
-    tiempo.textContent = `${data.cookingTime} minutos`;  
-    categoria.textContent = data.category; 
+    tiempo.textContent = `${data.cookTimeMinutes} minutos`;  
+    categoria.textContent = data.cuisine; 
 })
 .catch(function(error) {
     console.log("Error: " + error);

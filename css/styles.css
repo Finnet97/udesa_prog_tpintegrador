@@ -137,3 +137,16 @@ footer {
     text-align: center;
     padding: 10px;
 }
+
+.detalles-panel {
+    display: flex;
+    margin: 20px;
+    background: bisque;
+    border-radius: 30px;
+}
+
+.detalles-panel img {
+    width: 400px;
+    margin: 30px;
+    border-radius: 20px;
+}
