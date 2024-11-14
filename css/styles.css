@@ -39,6 +39,11 @@ header, footer {
     align-items: center;
 }
 
+.navbar a {
+    text-decoration: none;
+    color: #F4F4F4;
+}
+
 .logo {
     display: flex;
     align-items: center;
