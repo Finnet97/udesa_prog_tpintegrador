@@ -118,7 +118,7 @@ header, footer {
 
 .recetas-container article {
     display: flex;
-    background-color: #e7dbdb;
+    background-color: bisque;
     flex-direction: column;
     align-items: center;
     padding-top: 15px;
@@ -154,4 +154,11 @@ footer {
     width: 400px;
     margin: 30px;
     border-radius: 20px;
+}
+
+.detalles-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
 }

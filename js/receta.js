@@ -19,11 +19,20 @@ fetch(`https://dummyjson.com/recipes/${recetaID}`)
     let tiempo = document.querySelector(".tiempo-receta");
     let categoria = document.querySelector(".categoria-receta");
 
-    imagen.src = data.image;  
-    nombre.textContent = data.name;  
-    instrucciones.textContent = data.instructions;  
+    imagen.src = data.image;
+    nombre.textContent = data.name;
+
+    // Limpiar instrucciones antes de agregar
+    instrucciones.textContent = '';
+
+    // Iterar y añadir instrucciones al contenedor
+    for (let i = 0; i < data.instructions.length; i++) {
+        const recetaInstruccion = data.instructions[i];
+        instrucciones.innerHTML += `<p>${i + 1}. ${recetaInstruccion}</p>`;  
+    }
+
     tiempo.textContent = `${data.cookTimeMinutes} minutos`;  
-    categoria.textContent = data.cuisine; 
+    categoria.textContent = data.cuisine;
 })
 .catch(function(error) {
     console.log("Error: " + error);
