@@ -35,7 +35,7 @@ header, footer {
 
 .navbar {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
 }
 
@@ -94,13 +94,38 @@ header, footer {
     padding: 20px;
     text-align: center;
 }
+
 .recetas h2 {
     color: #cfa37f;
 }
 
 .recetas-container {
-    display: grid;
+    display: flex;
     padding: 20px;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.recetas-container article {
+    display: flex;
+    background-color: #e7dbdb;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 15px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    min-width: 200px;
+    width: auto;
+}
+
+.recetas-container article img {
+    width: 100px;
+    border-radius: 5px;
+    padding-bottom: 10px;
+}
+
+.recetas-container article p {
+    padding-bottom: 5px;
 }
 
 footer {
