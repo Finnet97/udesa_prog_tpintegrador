@@ -15,7 +15,7 @@ fetch('https://dummyjson.com/recipes')
         const receta = data.recipes[i];
 
         recetas += `
-            <a href="">
+            <a href="./receta.html?id=${receta.id}">
                 <article>
                     <img src="${receta.image}" alt="${receta.name}">
                     <p>${receta.name}</p>

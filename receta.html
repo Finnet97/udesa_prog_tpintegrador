@@ -3,9 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>receta</title>
+    <link rel="stylesheet" href="./css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+    <title>Recetas</title>
 </head>
 <body>
-    
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <img src="./img/logo_gerenico.png" alt="Logo del sitio">
+                <h3>
+                    Food <br>
+                    International
+                </h3>
+            </div>
+            <div class="search-bar">
+                <form id="form-busqueda">
+                    <input type="text" id="input-busqueda" placeholder="Buscar recetas...">
+                    <button type="submit">Buscar</button>
+                </form>
+            </div>
+            <ul class="menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="categories.html">Categorías</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="register.html">Registro</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="detalles-container">
+            <img class="imagen-receta" src="" alt="">
+            <h2 class="nombre-receta"></h2>
+            <h3 class="intrucciones-receta"></h3>
+            <h3 class="tiempo-receta"></h3>
+            <h3 class="categoria-receta"></h3>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2024 Recetas de Cocina. Creado por: Tomás Chipont, Ignacio Sierra, Gianluca Piperno</p>
+    </footer>
+
+    <script src="./js/receta.js"></script>
 </body>
 </html>
