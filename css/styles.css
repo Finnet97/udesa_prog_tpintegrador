@@ -150,10 +150,15 @@ footer {
     border-radius: 30px;
 }
 
-.detalles-panel img {
+.imagen-receta {
     width: 400px;
     margin: 30px;
     border-radius: 20px;
+}
+
+.categoria-receta a {
+    text-decoration: none;
+    color: #cb905f;
 }
 
 .detalles-content {
@@ -161,4 +166,45 @@ footer {
     flex-direction: column;
     justify-content: space-evenly;
     flex-wrap: wrap;
+}
+
+.detalles-misc-info {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.main-sign {
+    display: flex;
+    justify-content: center;
+}
+
+.detalles-misc-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.detalles-ingredientes-article {
+    margin: 20px;
+    background-color: bisque;
+    border-radius: 30px;
+
+    width: 30vw;
+}
+
+.detalles-diff-article {
+    margin: 20px;
+    background-color: bisque;
+    border-radius: 30px;
+
+    width: 30vw;
+}
+
+.detalles-rating-article {
+    margin: 20px;
+    background-color: bisque;
+    border-radius: 30px;
+
+    width: 30vw;
 }
