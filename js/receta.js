@@ -13,50 +13,54 @@ fetch(`https://dummyjson.com/recipes/${recetaID}`)
 .then(function(data) {
     console.log(data);
 
-    // container principal
     let imagen = document.querySelector(".imagen-receta");
     let nombre = document.querySelector(".nombre-receta");
-    let instrucciones = document.querySelector(".instrucciones-receta");
+    let instruccionesLista = document.querySelector(".instrucciones-lista");
     let tiempo = document.querySelector(".tiempo-receta");
     let categoria = document.querySelector(".categoria-receta");
 
-    // container ingredientes
-    let ingredientes = document.querySelector(".detalles-ingredientes");
-
-    // container dificultad
+    let ingredientesLista = document.querySelector(".detalles-ingredientes");
     let diff = document.querySelector(".detalles-diff");
     let cal = document.querySelector(".detalles-cal");
     let serv = document.querySelector(".detalles-servings");
+    let tagsLista = document.querySelector(".tags-list");
+    let rating = document.querySelector(".detalles-rating");
+    let reviews = document.querySelector(".detalles-reviews");
 
     imagen.src = data.image;
-    nombre.textContent = data.name;
+    nombre.innerHTML = data.name;
 
-    instrucciones.textContent = '';
-
-    for (let instruccion = 0; instruccion < data.instructions.length; instruccion++) {
-        const recetaInstruccion = data.instructions[instruccion];
-        instrucciones.innerHTML += `<p>${instruccion + 1}. ${recetaInstruccion}</p>`;  
+    instruccionesLista.innerHTML = '';
+    for (let i = 0; i < data.instructions.length; i++) {
+        instruccionesLista.innerHTML += `<h3>${i + 1}. ${data.instructions[i]}</h3>`;
     }
 
-    tiempo.textContent = `${data.cookTimeMinutes} minutos`;  
+    tiempo.innerHTML = `${data.cookTimeMinutes} minutos`;
 
-    categoria.textContent = '';
-    categoria.innerHTML += `<a href='./categories.html'>${data.cuisine}</a>`;
+    categoria.innerHTML = `<a href='./categories.html'>${data.cuisine}</a>`;
 
-    ingredientes.textContent = '';
-
-    for (let ingrediente = 0; ingrediente < data.ingredients.length; ingrediente++) {
-        const recetaInsgrediente = data.ingredients[ingrediente];
-        ingredientes.innerHTML += `<p>${ingrediente + 1}. ${recetaInsgrediente}</p>`;  
+    ingredientesLista.innerHTML = '';
+    for (let i = 0; i < data.ingredients.length; i++) {
+        ingredientesLista.innerHTML += `<h3>${i + 1}. ${data.ingredients[i]}</h3>`;
     }
 
-    diff.textContent = data.difficulty;
-    cal.textContent = `${data.caloriesPerServing} kcal`;
+    diff.innerHTML = data.difficulty;
+
+    cal.innerHTML = `${data.caloriesPerServing} kcal`;
+
     if (data.servings >= 1) {
-        serv.textContent = `${data.servings} Porciones`;
+        serv.innerHTML = `${data.servings} Porciones`;
     } else {
-        serv.textContent = `${data.servings} Porcion`;
+        serv.innerHTML = `${data.servings} Porción`;
     }
+
+    tagsLista.innerHTML = '';
+    for (let i = 0; i < data.tags.length; i++) {
+        tagsLista.innerHTML += `<p>${data.tags[i]}</p>`;
+    }
+
+    rating.innerHTML = data.rating;
+    reviews.innerHTML = `${data.reviewCount} reseñas`;
 })
 .catch(function(error) {
     console.log("Error: " + error);

@@ -11,7 +11,7 @@ body {
     color: #cfa37f;
 }
 
-h1, h2, h3, .menu a, button {
+h1, h2, h3, p, .menu a, button {
     font-family: 'Poppins', sans-serif;
 }
 
@@ -177,15 +177,14 @@ footer {
 .main-sign {
     display: flex;
     justify-content: center;
-}
-
-.detalles-misc-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    color: #967d68;
 }
 
 .detalles-ingredientes-article {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
     margin: 20px;
     background-color: bisque;
     border-radius: 30px;
@@ -194,17 +193,49 @@ footer {
 }
 
 .detalles-diff-article {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+
     margin: 20px;
     background-color: bisque;
     border-radius: 30px;
 
     width: 30vw;
+}
+
+.detalles-tags {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.detalles-tags h3 {
+    color: #967d68;
+}
+
+.tags-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .detalles-rating-article {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
     margin: 20px;
     background-color: bisque;
     border-radius: 30px;
 
     width: 30vw;
 }
+
+.detalles-revs {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
