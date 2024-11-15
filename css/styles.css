@@ -67,7 +67,6 @@ header, footer {
 
 .search-bar {
     display: flex;
-    margin-left: 10%;
 }
 
 .search-bar input {
