@@ -238,3 +238,15 @@ footer {
     align-items: center;
 }
 
+.formulario_contenedor {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.formulario_contenedor a h3 {
+    text-decoration: none;
+    color: #cb905f;
+    
+}
+
