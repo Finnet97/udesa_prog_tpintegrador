@@ -260,7 +260,7 @@ footer {
     align-items: center;
 }
 
-.formulario_contenedor a h3 {
+.formulario_contenedor a  {
     text-decoration: none;
     color: #cb905f;
 }
@@ -276,3 +276,4 @@ footer {
     text-decoration: none;
     color: #F4F4F4;
 }
+
