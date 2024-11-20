@@ -230,6 +230,13 @@ footer {
     gap: 5px; 
 }
 
+.formulario_contenedor {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
 .detalles-rating-article {
     display: flex;
     flex-direction: column;
