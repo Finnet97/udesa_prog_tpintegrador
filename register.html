@@ -6,9 +6,10 @@
     <link rel="stylesheet" href="./css/styles.css">
     <title>register</title>
 </head>
+
 <body>
     <header>
-        <nav class="navbar_register">
+        <nav class="navbar">
             <a href="./index.html">
                 <div class="logo">
                     <img src="./img/logo_gerenico.png" alt="Logo del sitio">
@@ -18,7 +19,12 @@
                     </h3>
                 </div>
             </a>
-
+            <div class="search-bar">
+                <form id="form-busqueda">
+                    <input type="text" id="input-busqueda" placeholder="Buscar recetas...">
+                    <button type="submit">Buscar</button>
+                </form>
+            </div>
             <ul class="menu">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="categories.html">Categorías</a></li>
@@ -28,27 +34,36 @@
         </nav>
     </header>
 
+    <Main class="mainFormLogin">
+        <form class="formLogin" action="./index.html" method="get">
+            <div>
+                <label class="email" for="email">Correo electrónico: </label>
+                <input type="email" name="emailUsuario" id="email" value="">
+            </div>
+    
+            <div>
+                <label class="password" for="password">Contraseña: </label>
+                <input type="password" name="passwordUsuario" id="password" value="">
+            </div>
 
-    <main class = "formulario_contenedor">
-        <h2>registrate</h2>
+            <div>
+                <label class="terminos" for="terminos">Terminos y Condiciones</label>
+                <input type="checkbox" id="terminos" name="terminos" required>
+            </div>
 
-        <label for="email">email</label>
-        <input type="email" id="email" name="email" placeholder="ingrese su email" required>
+            <div>
+                <a class="usuarioSinCuenta" href="./login.html">"Ya tengo cuenta"</a>
+            </div>
 
-        <label for="contraseña">contraseña:</label>
-        <input type="contraseña" id="contraseña" name="contraseña" placeholder="ingrese su contraseña" required>
-        
-        <input type="checkbox" id="terminos" name="terminos" required>
-        <label for="terminos"> terminos y condiciones</label>
-        <button type="submit">registrate</button>
-
-        <a href="./login.html"><h3>Ya tengo cuenta</h3></a>
-
-    </main>
+            <button type="submit">Enviar</button>
+        </form>
+    </Main>
 
 
- <footer>
+
+<footer>
         <p>© 2024 Recetas de Cocina. Creado por: Tomás Chipont, Ignacio Sierra, Gianluca Piperno</p>
- </footer>
+</footer>
+
 </body>
 </html>

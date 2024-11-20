@@ -3,9 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/styles.css">
     <title>login</title>
 </head>
 <body>
-    
+    <header>
+        <nav class="navbar">
+            <a href="./index.html">
+                <div class="logo">
+                    <img src="./img/logo_gerenico.png" alt="Logo del sitio">
+                    <h3>
+                        Food <br>
+                        International
+                    </h3>
+                </div>
+            </a>
+            <div class="search-bar">
+                <form id="form-busqueda">
+                    <input type="text" id="input-busqueda" placeholder="Buscar recetas...">
+                    <button type="submit">Buscar</button>
+                </form>
+            </div>
+            <ul class="menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="categories.html">Categorías</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="register.html">Registro</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <Main class="mainFormLogin">
+        <form class="formLogin" action="./index.html" method="get">
+            <div>
+                <label class="email" for="email">Correo electrónico: </label>
+                <input type="email" name="emailUsuario" id="email" value="">
+            </div>
+
+            <div>
+                <label class="password" for="password">Contraseña: </label>
+                <input type="password" name="passwordUsuario" id="password" value="">
+            </div>
+
+            <div>
+                <a class="usuarioSinCuenta" href="./register.html">"No tengo cuenta"</a>
+            </div>
+
+            <button type="submit">Enviar</button>
+        </form>
+    </Main>
+
+    <footer>
+        <p>© 2024 Recetas de Cocina. Creado por: Tomás Chipont, Ignacio Sierra, Gianluca Piperno</p>
+    </footer>
+
+    <script src="./js/login.js"></script>
+    <script src="./js/search.js"></script>
+
 </body>
 </html>
