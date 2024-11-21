@@ -413,10 +413,26 @@ input::placeholder {
     .menu {
         display: none;
     }
+
+    .recetas-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px; 
+        justify-content: space-around;
+       font-size: 13px;
+    }
 }
 
 @media (max-width: 420px) {
     .search-bar {
         display: none;
+    }
+
+    .recetas-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px; 
+        justify-content: space-around;
+       font-size: 10px;
     }
 }
