@@ -115,7 +115,7 @@ header, footer {
 .recetas-container {
     display: flex;
     flex-wrap: wrap;
-    gap: 10px; /* Añade espacio uniforme entre los artículos */
+    gap: 10px; 
     justify-content: space-around;
 }
 
@@ -128,9 +128,9 @@ header, footer {
     margin-bottom: 10px;
     border-radius: 10px;
 
-    width: 220px; /* Fija el ancho */
-    height: 300px; /* Fija el alto */
-    overflow: hidden; /* Oculta contenido que exceda los límites */
+    width: 220px;
+    height: 300px;
+    overflow: hidden;
     text-align: center;
 }
 
@@ -142,10 +142,10 @@ header, footer {
 }
 
 .recetas-container article p {
-    max-height: 40px; /* Fija un máximo para la altura del texto */
-    overflow: hidden; /* Oculta texto que exceda el límite */
-    text-overflow: ellipsis; /* Muestra "..." si el texto es muy largo */
-    white-space: nowrap; /* Evita saltos de línea */
+    max-height: 40px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 footer {
@@ -158,7 +158,7 @@ footer {
     margin: 20px;
     background: bisque;
     border-radius: 30px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Sombra para destacar */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .imagen-receta {
@@ -365,4 +365,34 @@ input::placeholder {
     border: 1px solid #ffffff;
     border-radius: 5px;
     padding: 10px;
+}
+
+.categories-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 40px;
+    margin: 35px;
+}
+
+.categories {
+    display: flex;
+    flex-direction: row;
+}
+
+.nav-categories {
+    display: flex;
+    background-color: #bbe6d0;
+    border-radius: 10px;
+    width: 30vw;
+    height: 600px;
+}
+
+.nav-receta-container {
+    display: flex;
+    background-color: #bbe6d0;
+    border-radius: 10px;
+    width: 50vw;
+    height: 600px;
 }
