@@ -95,8 +95,12 @@ header, footer {
 }
 
 .recetas {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
     padding: 20px;
-    text-align: center;
+    gap: 30px;
+    align-items: center;
 }
 
 .recetas h2 {
@@ -110,8 +114,8 @@ header, footer {
 
 .recetas-container {
     display: flex;
-    padding: 20px;
     flex-wrap: wrap;
+    gap: 10px; /* Añade espacio uniforme entre los artículos */
     justify-content: space-around;
 }
 
@@ -123,18 +127,25 @@ header, footer {
     padding-top: 15px;
     margin-bottom: 10px;
     border-radius: 10px;
-    min-width: 220px;
-    width: auto;
+
+    width: 220px; /* Fija el ancho */
+    height: 300px; /* Fija el alto */
+    overflow: hidden; /* Oculta contenido que exceda los límites */
+    text-align: center;
 }
 
 .recetas-container article img {
-    width: 100px;
-    border-radius: 5px;
-    padding-bottom: 10px;
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    padding: 15px;
 }
 
 .recetas-container article p {
-    padding-bottom: 5px;
+    max-height: 40px; /* Fija un máximo para la altura del texto */
+    overflow: hidden; /* Oculta texto que exceda el límite */
+    text-overflow: ellipsis; /* Muestra "..." si el texto es muy largo */
+    white-space: nowrap; /* Evita saltos de línea */
 }
 
 footer {
@@ -354,5 +365,4 @@ input::placeholder {
     border: 1px solid #ffffff;
     border-radius: 5px;
     padding: 10px;
-    
 }
