@@ -260,3 +260,99 @@ footer {
     gap: 5px;
 }
 
+.formulario_contenedor {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.formulario_contenedor a  {
+    text-decoration: none;
+    color: #cb905f;
+}
+
+
+.navbar_register {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar_register a {
+    text-decoration: none;
+    color: #F4F4F4;
+}
+
+.mainFormLogin {
+    display: flex;
+    justify-content: center;
+    color: white;
+}
+
+.formLogin {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+    background-color: #C2BEBE;
+    padding-right: 2%;
+    padding-left: 2%;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    margin: 5%;
+    border-radius: 3%;
+    border: 2px solid #463a30;  
+    background-image: url(../img/fondoDeForm.png)
+}
+
+.formLogin div{
+    margin-bottom: 5%;
+}
+
+.terminos{
+    color: #463a30;
+}
+
+.usuarioSinCuenta{
+    color: #463a30;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+#email, #password, #terminos{
+    background: transparent;
+    border: 1px solid #463a30;
+    border-radius: 5px; 
+    padding: 10px; 
+}
+
+input::placeholder {
+    color: #463a30;
+    font-size: smaller;
+}
+
+.btnLoginRegister{
+    background: #463a30;
+}
+
+.logRegTitulo{
+    color: white;
+    font-size: xx-large;
+    margin-bottom: 8%;
+}
+
+.terminos {
+    color: white;
+}
+
+.usuarioSinCuenta {
+    color: white;
+}
+
+#email, #password, #terminos{
+    background: transparent;
+    border: 1px solid #ffffff;
+    border-radius: 5px;
+    padding: 10px;
+    
+}
