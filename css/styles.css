@@ -53,6 +53,10 @@ header, footer {
     width: 120px;
 }
 
+.hamburguer-menu {
+    display: none;
+}
+
 .menu {
     list-style: none;
     display: flex;
@@ -395,4 +399,24 @@ input::placeholder {
     border-radius: 10px;
     width: 50vw;
     height: 600px;
+}
+
+@media (max-width: 720px) {
+    .hamburguer-menu {
+        display: block;
+    }
+
+    .hamburguer-menu img {
+        width: 60px;
+    }
+
+    .menu {
+        display: none;
+    }
+}
+
+@media (max-width: 420px) {
+    .search-bar {
+        display: none;
+    }
 }
