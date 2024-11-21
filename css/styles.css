@@ -121,6 +121,7 @@ header, footer {
     flex-wrap: wrap;
     gap: 10px; 
     justify-content: space-around;
+    font-size: 11px;
 }
 
 .recetas-container article {
