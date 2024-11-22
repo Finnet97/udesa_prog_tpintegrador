@@ -343,7 +343,7 @@ footer {
 }
 
 input::placeholder {
-    color: #463a30;
+    color: white;
     font-size: smaller;
 }
 
