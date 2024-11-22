@@ -156,6 +156,7 @@ header, footer {
 footer {
     text-align: center;
     padding: 10px;
+    padding: 10px;
 }
 
 .detalles-panel {
@@ -422,7 +423,28 @@ input::placeholder {
         justify-content: space-around;
        font-size: 13px;
     }
+
+    .detalles-panel {
+        display: flex;
+        margin: 20px;
+        background: bisque;
+        border-radius: 30px;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        align-content: flex-end;
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .imagen-receta {
+        width: 600px;
+        margin: 30px;
+        border-radius: 20px;
+        height: 270px;
+        
+    }
+    
 }
+
 
 @media (max-width: 420px) {
     .search-bar {
@@ -440,4 +462,23 @@ input::placeholder {
         justify-content: space-around;
        font-size: 10px;
     }
+
+    .detalles-panel {
+        display: flex;
+        margin: 20px;
+        background: bisque;
+        border-radius: 30px;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        align-content: flex-end;
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .imagen-receta {
+        width: 300px;
+        margin: 30px;
+        border-radius: 20px;
+        height: 270px;
+    }
+    
 }
