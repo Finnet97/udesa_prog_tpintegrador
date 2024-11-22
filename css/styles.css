@@ -76,7 +76,7 @@ header, footer {
 .search-bar input {
     padding: 8px;
     border: 1px solid #C2BEBE;
-    border-radius: 5px;
+    border-radius: git5px;
 }
 
 .search-bar button {
@@ -113,7 +113,7 @@ header, footer {
 
 .recetas-container a {
     text-decoration: none;
-    color: #cfa37f;
+    color: #967d68;
 }
 
 .recetas-container {
@@ -121,6 +121,7 @@ header, footer {
     flex-wrap: wrap;
     gap: 10px; 
     justify-content: space-around;
+    font-size: 11px;
 }
 
 .recetas-container article {
@@ -336,7 +337,7 @@ footer {
 }
 
 input::placeholder {
-    color: #463a30;
+    color: white;
     font-size: smaller;
 }
 
@@ -390,16 +391,36 @@ input::placeholder {
     }
 
     .hamburguer-menu img {
-        width: 60px;
+        width: 50px;
     }
 
     .menu {
         display: none;
+    }
+
+    .recetas-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px; 
+        justify-content: space-around;
+       font-size: 13px;
     }
 }
 
 @media (max-width: 420px) {
     .search-bar {
         display: none;
+    }
+
+    .hamburguer-menu img {
+        width: 45px;
+    }
+
+    .recetas-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px; 
+        justify-content: space-around;
+       font-size: 10px;
     }
 }
