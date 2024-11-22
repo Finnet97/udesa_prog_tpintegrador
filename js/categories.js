@@ -1,27 +1,26 @@
 
-const categoria = document.getElementById(".categories");
+const categoriaContainer = document.querySelector(".categories");
 
-fetch(`https://dummyjson.com/recipes`)
+fetch(`https://dummyjson.com/recipes/tags`)
 .then(function(response) {
     return response.json();
 })
 .then(function(data) {
-    let categoria = "";
+    let cat = "";
 
-    for (let i = 0; i < data.recipes.length; i++) {
-        const categoria = data.recipes[i];
-
-        categoria += `
-            <a href="./receta.html?id=${categoria.id}">
+    for (let i = 0; i < 24; i++) {
+        const categoria = data[i];
+        
+        cat += `
+            <a href="./index.html">
                 <article>
-                    <img src="${categoria.image}" alt="${categoria.name}">
-                    <p>${categoria.cuisine}</p>
+                    <p>${categoria}</p>
                 </article>
             </a>
         `;
     }
 
-    recetaList.innerHTML = categoria;
+    categoriaContainer.innerHTML += cat;
 })
 .catch(function(error) {
     console.log("Error: " + error);
