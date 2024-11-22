@@ -11,7 +11,7 @@ body {
     color: #cfa37f;
 }
 
-h1, h2, h3, p, .menu a, button {
+h1, h2, h3, p, a, button, label {
     font-family: 'Poppins', sans-serif;
 }
 
@@ -245,13 +245,6 @@ footer {
     gap: 5px; 
 }
 
-.formulario_contenedor {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-}
-
 .detalles-rating-article {
     display: flex;
     flex-direction: column;
@@ -279,6 +272,7 @@ footer {
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 10px;
 }
 
 .formulario_contenedor a  {
@@ -378,27 +372,16 @@ input::placeholder {
     flex-wrap: wrap;
     gap: 40px;
     margin: 35px;
+    align-content: center;
 }
 
 .categories {
     display: flex;
     flex-direction: row;
-}
+    background-color: #967d68;
 
-.nav-categories {
-    display: flex;
-    background-color: #bbe6d0;
-    border-radius: 10px;
-    width: 30vw;
-    height: 600px;
-}
-
-.nav-receta-container {
-    display: flex;
-    background-color: #bbe6d0;
-    border-radius: 10px;
-    width: 50vw;
-    height: 600px;
+    width: 90vw;
+    height: 100vh;
 }
 
 @media (max-width: 720px) {
