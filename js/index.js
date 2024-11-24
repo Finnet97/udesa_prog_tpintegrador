@@ -4,7 +4,8 @@ let currentPage = 1;
 const recipesPerPage = 12;
 
 const recetaList = document.querySelector(".recetas-container");
-const btnCargarMas = document.getElementById("btn-cargar-mas");
+const botonCargarMas = document.getElementById("btn-cargar-mas");
+const buscadorIndex = document.getElementById("form-busqueda");
 
 fetch(`https://dummyjson.com/recipes?skip=0&limit=${recipesPerPage}`)
 .then(function(response) {
@@ -30,14 +31,14 @@ fetch(`https://dummyjson.com/recipes?skip=0&limit=${recipesPerPage}`)
     recetaList.innerHTML = recetas;
 
     if (data.recipes.length < recipesPerPage) {
-        btnCargarMas.style.display = "none";
+        botonCargarMas.style.display = "none";
     }
 })
 .catch(function(error) {
     console.log("Error: " + error);
 });
 
-btnCargarMas.addEventListener("click", function() {
+botonCargarMas.addEventListener("click", function() {
     currentPage++;
 
     fetch(`https://dummyjson.com/recipes?skip=${(currentPage - 1) * recipesPerPage}&limit=${recipesPerPage}`)
@@ -64,7 +65,7 @@ btnCargarMas.addEventListener("click", function() {
         recetaList.innerHTML += recetas;
 
         if (data.recipes.length < recipesPerPage) {
-            btnCargarMas.style.display = "none";
+            botonCargarMas.style.display = "none";
         }
     })
     .catch(function(error) {
@@ -72,7 +73,7 @@ btnCargarMas.addEventListener("click", function() {
     });
 });
 
-document.addEventListener('submit', function(event) {
+buscadorIndex.addEventListener('submit', function(event) {
 
     const inputBusqueda = document.getElementById('input-busqueda').value.trim();
 
