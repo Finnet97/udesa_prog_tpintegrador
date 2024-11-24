@@ -41,33 +41,50 @@ btnCargarMas.addEventListener("click", function() {
     currentPage++;
 
     fetch(`https://dummyjson.com/recipes?skip=${(currentPage - 1) * recipesPerPage}&limit=${recipesPerPage}`)
-        .then(function(response) {
-            return response.json();
-        })
-        .then(function(data) {
-            let recetas = "";
+    .then(function(response) {
+        return response.json();
+    })
+    .then(function(data) {
+        let recetas = "";
 
-            for (let i = 0; i < data.recipes.length; i++) {
-                const receta = data.recipes[i];
+        for (let i = 0; i < data.recipes.length; i++) {
+            const receta = data.recipes[i];
 
-                recetas += `
-                    <a href="./receta.html?id=${receta.id}">
-                        <article>
-                            <img src="${receta.image}" alt="${receta.name}">
-                            <p>${receta.name}</p>
-                            <p>${receta.difficulty}</p>
-                        </article>
-                    </a>
-                `;
-            }
+            recetas += `
+                <a href="./receta.html?id=${receta.id}">
+                    <article>
+                        <img src="${receta.image}" alt="${receta.name}">
+                        <p>${receta.name}</p>
+                        <p>${receta.difficulty}</p>
+                    </article>
+                </a>
+            `;
+        }
 
-            recetaList.innerHTML += recetas;
+        recetaList.innerHTML += recetas;
 
-            if (data.recipes.length < recipesPerPage) {
-                btnCargarMas.style.display = "none";
-            }
-        })
-        .catch(function(error) {
-            console.log("Error: " + error);
-        });
+        if (data.recipes.length < recipesPerPage) {
+            btnCargarMas.style.display = "none";
+        }
+    })
+    .catch(function(error) {
+        console.log("Error: " + error);
+    });
+});
+
+document.addEventListener('submit', function(event) {
+
+    const inputBusqueda = document.getElementById('input-busqueda').value.trim();
+
+    if (inputBusqueda === "") {
+        alert("El buscador esta vacío, probá poniendo texto.");
+        event.preventDefault();
+        return;
+    }
+
+    if (inputBusqueda.length <= 3) {
+        alert("Acordate que el buscador tiene que tener más de 3 caracteres.");
+        event.preventDefault();
+        return;
+    }
 });
