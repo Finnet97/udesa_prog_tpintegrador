@@ -1,5 +1,3 @@
-
-
 let currentPage = 1;
 const recipesPerPage = 12;
 

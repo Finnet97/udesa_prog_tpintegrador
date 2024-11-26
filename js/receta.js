@@ -37,7 +37,9 @@ fetch(`https://dummyjson.com/recipes/${recetaID}`)
 
     tiempo.innerHTML = `${data.cookTimeMinutes} minutos`;
 
-    categoria.innerHTML = `<a href='./categories.html'>${data.cuisine}</a>`;
+    categoria.innerHTML = data.cuisine
+    ? `<a href='./category.html?category=${encodeURIComponent(data.cuisine)}'>${data.cuisine}</a>`
+    : "Categoría no especificada";
 
     ingredientesLista.innerHTML = '';
     for (let i = 0; i < data.ingredients.length; i++) {
