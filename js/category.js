@@ -14,12 +14,13 @@ if (selectedCategory) {
 
                 recetasFiltradas.forEach(recipe => {
                     recipesHTML += `
+                    <a href="receta.html?id=${recipe.id}" class="ver-detalle">
                         <article>
                             <img src="${recipe.image || 'placeholder.jpg'}" alt="Imagen de ${recipe.name}">
                             <h3>${recipe.name || 'Nombre no disponible'}</h3>
-                            <p>Nivel de dificultad: ${recipe.difficulty || 'No especificado'}</p>
-                            <a href="receta.html?id=${recipe.id}" class="ver-detalle">Ver detalle</a>
+                            <p> ${recipe.difficulty || 'No especificado'}</p>
                         </article>
+                    </a>
                     `;
                 });
 
