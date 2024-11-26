@@ -112,6 +112,56 @@ header, footer {
     color: #cfa37f;
 }
 
+.category-main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 35px;
+}
+
+.category-container a {
+    text-decoration: none;
+    color: #967d68;
+}
+
+.category-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: space-around;
+    font-size: 10px;
+    margin: 35px;
+}
+
+.category-container article {
+    display: flex;
+    background-color: bisque;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 15px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+
+    width: 220px;
+    height: 300px;
+    overflow: hidden;
+    text-align: center;
+}
+
+.category-container article img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 20px;
+    padding: 15px;
+}
+
+.category-container article p {
+    max-height: 40px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
 .recetas-container a {
     text-decoration: none;
     color: #967d68;
@@ -120,9 +170,9 @@ header, footer {
 .recetas-container {
     display: flex;
     flex-wrap: wrap;
-    gap: 10px; 
+    gap: 10px;
     justify-content: space-around;
-    font-size: 11px;
+    font-size: 10px;
 }
 
 .recetas-container article {

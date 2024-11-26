@@ -1,4 +1,6 @@
 
+const buscadorIndex = document.getElementById("form-busqueda");
+
 let qs = location.search;
 let qsObj = new URLSearchParams(qs);
 
@@ -6,7 +8,6 @@ const recetaID = qsObj.get("id");
 console.log(recetaID);
 
 fetch(`https://dummyjson.com/recipes/${recetaID}`)
-
 .then(function(response) {
     return response.json();
 })
@@ -66,4 +67,21 @@ fetch(`https://dummyjson.com/recipes/${recetaID}`)
 })
 .catch(function(error) {
     console.log("Error: " + error);
+});
+
+buscadorIndex.addEventListener('submit', function(event) {
+
+    const inputBusqueda = document.getElementById('input-busqueda').value.trim();
+
+    if (inputBusqueda === "") {
+        alert("El buscador esta vacío, probá poniendo texto.");
+        event.preventDefault();
+        return;
+    }
+
+    if (inputBusqueda.length <= 3) {
+        alert("Acordate que el buscador tiene que tener más de 3 caracteres.");
+        event.preventDefault();
+        return;
+    }
 });

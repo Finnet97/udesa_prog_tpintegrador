@@ -1,3 +1,5 @@
+const buscadorIndex = document.getElementById("form-busqueda");
+
 const urlParams = new URLSearchParams(window.location.search);
 const selectedCategory = urlParams.get("category");
 
@@ -24,20 +26,37 @@ if (selectedCategory) {
                     `;
                 });
 
-                document.querySelector(".recetas-container").innerHTML = recipesHTML;
+                document.querySelector(".category-container").innerHTML = recipesHTML;
             } else {
-                document.querySelector(".recetas-container").innerHTML = `
+                document.querySelector(".category-container").innerHTML = `
                     <p>No hay ninguna comida con la categoría seleccionada.</p>
                 `;
             }
         })
         .catch(error => {
-            document.querySelector(".recetas-container").innerHTML = `
+            document.querySelector(".category-container").innerHTML = `
                 <p>Ocurrió un error al cargar las recetas. Por favor, intenta nuevamente.</p>
             `;
         });
 } else {
-    document.querySelector(".recetas-container").innerHTML = `
+    document.querySelector(".category-container").innerHTML = `
         <p>No se ha seleccionado ninguna categoría.</p>
     `;
 }
+
+buscadorIndex.addEventListener('submit', function(event) {
+
+    const inputBusqueda = document.getElementById('input-busqueda').value.trim();
+
+    if (inputBusqueda === "") {
+        alert("El buscador esta vacío, probá poniendo texto.");
+        event.preventDefault();
+        return;
+    }
+
+    if (inputBusqueda.length <= 3) {
+        alert("Acordate que el buscador tiene que tener más de 3 caracteres.");
+        event.preventDefault();
+        return;
+    }
+});
