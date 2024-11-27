@@ -486,6 +486,7 @@ footer {
 }
 
 @media (max-width: 720px) {
+    
     .hamburguer-menu {
         display: block;
     }
@@ -498,12 +499,17 @@ footer {
         display: none;
     }
 
+    .detalles-misc-info {
+        display: flex;
+        justify-content: center;
+    }
+
     .recetas-container {
         display: flex;
         flex-wrap: wrap;
         gap: 10px; 
         justify-content: space-around;
-       font-size: 13px;
+        font-size: 13px;
     }
 
     .detalles-panel {
@@ -515,19 +521,19 @@ footer {
         align-content: flex-end;
         flex-direction: column;
         text-align: center;
+        align-items: center;
     }
     
     .imagen-receta {
-        width: 600px;
+        width: 260px;
         margin: 30px;
         border-radius: 20px;
         height: 270px;
-        
     }
-    
 }
 
 @media (max-width: 420px) {
+
     .search-bar {
         display: none;
     }
@@ -544,6 +550,11 @@ footer {
         font-size: 10px;
     }
 
+    .detalles-misc-info {
+        display: flex;
+        justify-content: center;
+    }
+
     .detalles-panel {
         display: flex;
         margin: 20px;
@@ -553,10 +564,11 @@ footer {
         align-content: flex-end;
         flex-direction: column;
         text-align: center;
+        align-items: center;
     }
     
     .imagen-receta {
-        width: 300px;
+        width: 260px;
         margin: 30px;
         border-radius: 20px;
         height: 270px;
