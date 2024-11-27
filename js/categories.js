@@ -6,21 +6,25 @@ const btnCargarMasCats = document.getElementById("btn-cargar-mas-categories");
 const buscadorIndex = document.getElementById("form-busqueda");
 
 fetch(`https://dummyjson.com/recipes/tags`)
-.then(response => response.json())
-.then(data => {
-    cargarCategorias(data);
-})
-.catch(error => {
-    console.log("Error: " + error);
-});
-
-btnCargarMasCats.addEventListener("click", function() {
-    fetch(`https://dummyjson.com/recipes/tags`)
-    .then(response => response.json())
-    .then(data => {
+    .then(function(response) {
+        return response.json();
+    })
+    .then(function(data) {
         cargarCategorias(data);
     })
-    .catch(error => {
+    .catch(function(error) {
+        console.log("Error: " + error);
+    });
+
+btnCargarMasCats.addEventListener("click", function() {
+    etch(`https://dummyjson.com/recipes/tags`)
+    .then(function(response) {
+        return response.json();
+    })
+    .then(function(data) {
+        cargarCategorias(data);
+    })
+    .catch(function(error) {
         console.log("Error: " + error);
     });
 });

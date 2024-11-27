@@ -5,26 +5,42 @@ const selectedCategory = urlParams.get("category");
 
 if (selectedCategory) {
     fetch("https://dummyjson.com/recipes")
-        .then(response => response.json())
-        .then(data => {
-            const recetasFiltradas = data.recipes.filter(recipe =>
-                recipe.tags && recipe.tags.includes(selectedCategory)
-            );
+    .then(function(response) {
+        return response.json();
+    })
+    .then(function(data) {
+        const recetasFiltradas = [];
+        let index = 0;
 
-            if (recetasFiltradas.length > 0) {
-                let recipesHTML = "";
+        for (let i = 0; i < data.recipes.length; i++) {
+            const recipe = data.recipes[i];
 
-                recetasFiltradas.forEach(recipe => {
-                    recipesHTML += `
-                    <a href="receta.html?id=${recipe.id}" class="ver-detalle">
-                        <article>
-                            <img src="${recipe.image || 'placeholder.jpg'}" alt="Imagen de ${recipe.name}">
-                            <h3>${recipe.name || 'Nombre no disponible'}</h3>
-                            <p> ${recipe.difficulty || 'No especificado'}</p>
-                        </article>
-                    </a>
-                    `;
-                });
+            if (recipe.tags) {
+                for (let j = 0; j < recipe.tags.length; j++) {
+                    if (recipe.tags[j] === selectedCategory) {
+                        recetasFiltradas[index]=recipe;
+                        index++;
+                        break;
+                    }
+                }
+            }
+        }
+
+        if (recetasFiltradas.length > 0) {
+            let recipesHTML = "";
+
+            for (let k = 0; k < recetasFiltradas.length; k++) {
+                const recipe = recetasFiltradas[k];
+                recipesHTML += `
+                <a href="receta.html?id=${recipe.id}" class="ver-detalle">
+                    <article>
+                        <img src="${recipe.image || 'placeholder.jpg'}" alt="Imagen de ${recipe.name}">
+                        <h3>${recipe.name || 'Nombre no disponible'}</h3>
+                        <p> ${recipe.difficulty || 'No especificado'}</p>
+                    </article>
+                </a>
+                `;
+            }
 
                 document.querySelector(".category-container").innerHTML = recipesHTML;
             } else {
