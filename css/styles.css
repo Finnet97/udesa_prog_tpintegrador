@@ -479,6 +479,12 @@ input::placeholder {
     background-color: #967d68;
 }
 
+footer {
+    background-color: #cfa37f;
+    text-align: center;
+    padding: 1rem;
+}
+
 @media (max-width: 720px) {
     .hamburguer-menu {
         display: block;
