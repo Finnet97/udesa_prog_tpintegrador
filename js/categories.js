@@ -17,7 +17,7 @@ fetch(`https://dummyjson.com/recipes/tags`)
     });
 
 btnCargarMasCats.addEventListener("click", function() {
-    etch(`https://dummyjson.com/recipes/tags`)
+    fetch(`https://dummyjson.com/recipes/tags`)
     .then(function(response) {
         return response.json();
     })

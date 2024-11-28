@@ -4,52 +4,74 @@ const urlParams = new URLSearchParams(window.location.search);
 const selectedCategory = urlParams.get("category");
 
 if (selectedCategory) {
+    document.getElementById("categoria-nombre").textContent = selectedCategory
+}
+
+let aIndex = 0;
+let recetasFiltradas = [];
+const recetasPorPagina = 5;
+
+
+if (selectedCategory) {
     fetch("https://dummyjson.com/recipes")
-    .then(function(response) {
-        return response.json();
-    })
-    .then(function(data) {
-        const recetasFiltradas = [];
-        let index = 0;
+        .then(function(response) {
+            return response.json();
+        })
+        .then(function(data) {
+            let bIndex = 0;
 
-        for (let i = 0; i < data.recipes.length; i++) {
-            const recipe = data.recipes[i];
+            for (let i = 0; i < data.recipes.length; i++) {
+                const recipe = data.recipes[i];
 
-            if (recipe.tags) {
-                for (let j = 0; j < recipe.tags.length; j++) {
-                    if (recipe.tags[j] === selectedCategory) {
-                        recetasFiltradas[index]=recipe;
-                        index++;
-                        break;
+                if (recipe.tags) {
+                    for (let j = 0; j < recipe.tags.length; j++) {
+                        if (recipe.tags[j] === selectedCategory) {
+                            recetasFiltradas[bIndex]=recipe;
+                            bIndex++;
+                            break;
+                        }
                     }
                 }
             }
-        }
 
-        if (recetasFiltradas.length > 0) {
-            let recipesHTML = "";
+            function cargarRecetas() {
+                let recipesHTML = "";
+                let finDelIndex = aIndex + recetasPorPagina;
 
-            for (let k = 0; k < recetasFiltradas.length; k++) {
-                const recipe = recetasFiltradas[k];
-                recipesHTML += `
-                <a href="receta.html?id=${recipe.id}" class="ver-detalle">
-                    <article>
-                        <img src="${recipe.image || 'placeholder.jpg'}" alt="Imagen de ${recipe.name}">
-                        <h3>${recipe.name || 'Nombre no disponible'}</h3>
-                        <p> ${recipe.difficulty || 'No especificado'}</p>
-                    </article>
-                </a>
-                `;
+                if (finDelIndex > recetasFiltradas.length){
+                    finDelIndex = recetasFiltradas.length;
+                }
+
+                for (let i = aIndex; i < finDelIndex; i++){
+                    const receta = recetasFiltradas[i];
+                    recipesHTML += `
+                        <a href="receta.html?id=${receta.id}" class="ver-detalle">
+                            <article>
+                                <img src="${receta.image || 'placeholder.jpg'}" alt="Imagen de ${receta.name}">
+                                <h3>${receta.name || 'Nombre no disponible'}</h3>
+                                <p> ${receta.difficulty || 'No especificado'}</p>
+                            </article>
+                        </a>
+                    `;
+                }
+
+                document.querySelector(".category-container").innerHTML += recipesHTML;
+
+                aIndex += recetasPorPagina;
+
+                if (aIndex >= recetasFiltradas.length){
+                    document.getElementById("cargarMas").style.display = 'none';
+                } else {
+                    document.getElementById("cargarMas").style.display = 'block';
+                }
             }
 
-                document.querySelector(".category-container").innerHTML = recipesHTML;
-            } else {
-                document.querySelector(".category-container").innerHTML = `
-                    <p>No hay ninguna comida con la categoría seleccionada.</p>
-                `;
-            }
+            cargarRecetas();
+
+            document.getElementById("cargarMas").addEventListener('click', cargarRecetas);
+
         })
-        .catch(error => {
+        .catch(function(error) {
             document.querySelector(".category-container").innerHTML = `
                 <p>Ocurrió un error al cargar las recetas. Por favor, intenta nuevamente.</p>
             `;
