@@ -485,6 +485,21 @@ footer {
     padding: 1rem;
 }
 
+.errorContenedor{
+    color: red;
+    background-image: url(../img/fondo_error.png);
+    padding: 10px;
+    border-radius: 3px;
+    margin-bottom: 15px;
+    font-size: medium;
+    text-shadow: 2px 2px 2px rgb(65, 1, 1);
+    border: 1px solid #5a4a3e;
+}
+
+.errorContenedor p {
+    margin: 0;
+}
+
 @media (max-width: 720px) {
     
     .hamburguer-menu {

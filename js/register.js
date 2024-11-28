@@ -1,4 +1,3 @@
-
 const loginForm = document.querySelector(".formLogin");
 const buscadorIndex = document.getElementById("form-busqueda");
 
@@ -7,22 +6,28 @@ loginForm.addEventListener('submit', function(event) {
     const password = document.getElementById('password').value.trim()
     const terminos = document.getElementById('terminos').checked;
 
-    // Todo esto despues hay que cambiarlo para que no use alert
-    // La verdad ni idea que podemos hacer, una funcion separada?
+    let errorMensaje = "";
+
     if (email === "") {
-        alert("Email test")
+        errorMensaje += "Ingrese su correo eletrónico"
+        document.getElementById('errorMensaje').style.display = "block";
+        document.getElementById('errorMensaje').innerHTML = errorMensaje;
         event.preventDefault();
         return;
     }
 
     if (password === "") {
-        alert("Pasword test")
+        errorMensaje += "Ingrese su contraseña"
+        document.getElementById('errorMensaje').style.display = "block";
+        document.getElementById('errorMensaje').innerHTML = errorMensaje;
         event.preventDefault();
         return;
     }
 
     if (!terminos) {
-        alert("Checkbox test")
+        errorMensaje += "Acepte los Terminos y Condiciones"
+        document.getElementById('errorMensaje').style.display = "block";
+        document.getElementById('errorMensaje').innerHTML = errorMensaje;
         event.preventDefault();
         return;
     }
