@@ -21,7 +21,7 @@
             </a>
             <div class="search-bar">
                 <form id="form-busqueda" action="./search_results.html" method="get">
-                    <input type="text" id="input-busqueda" placeholder="Buscar recetas...">
+                    <input type="text" id="input-busqueda" name="buscador" value="" placeholder="Buscar recetas...">
                     <button type="submit">Buscar</button>
                 </form>
             </div>
@@ -38,11 +38,10 @@
     </header>
 
     <main>
-        <section id="resultados-recetas">
-            <h2>Resultados de Búsqueda</h2>
-            <div class="category-container" id="recetas-container">
-
-            </div>
+        <section class="recetas">
+            <h2>Resultados de tu busqueda</h2>
+            <div class="recetas-container"></div>
+            <button id="btn-cargar-mas">Cargar más</button>
         </section>
     </main>
 

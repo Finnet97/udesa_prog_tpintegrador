@@ -1,52 +1,76 @@
-document.addEventListener("DOMContentLoaded", () => {
-    const formBusqueda = document.querySelector("#form-busqueda");
+document.addEventListener("DOMContentLoaded", function() {
+    const formBusqueda = document.querySelector("#form-busqueda"); 
     const inputBusqueda = document.querySelector("#input-busqueda");
-    const recetasContainer = document.querySelector("#recetas-container");
+    const recetasContainer = document.querySelector(".recetas-container"); 
+    const btnCargarMas = document.querySelector("#btn-cargar-mas"); 
 
-    // Función para renderizar recetas
-    function renderRecetas(recipes) {
-        let recetas = "";
+    let paginaActual = 1; 
+    const recetasPorPagina = 10; 
 
-        for (let i = 0; i < recipes.length; i++) {
-            const receta = recipes[i];
-
-            recetas += `
-                <a href="./receta.html?id=${receta.id}">
-                    <article>
-                        <img src="${receta.image}" alt="${receta.title}">
-                        <p>${receta.name}</p>
-                        <p>Dificultad: ${receta.difficulty || "Desconocida"}</p>
-                    </article>
-                </a>
-            `;
-        }
-
-        recetasContainer.innerHTML = recetas || "<p>No se encontraron recetas con ese término.</p>";
+    function cargarRecetas(busqueda = "", pagina = 1) {
+        const url = `https://dummyjson.com/recipes/search?q=${busqueda}&limit=${recetasPorPagina}&skip=${(pagina - 1) * recetasPorPagina}`;
+        
+        fetch(url)
+            .then(function(response) {
+                return response.json(); 
+            })
+            .then(function(data) {
+                if (data.recipes && data.recipes.length > 0) {
+                    mostrarRecetas(data.recipes);
+                    btnCargarMas.style.display = "block";
+                } else {
+                    if (pagina === 1) {
+                        recetasContainer.innerHTML = "<p>No se encontraron recetas.</p>";
+                    } else {
+                        alert("No hay más recetas para cargar.");
+                        btnCargarMas.style.display = "none"; 
+                    }
+                }
+            })
+            .catch(function(error) {
+                console.error("Error al cargar recetas:", error);
+                recetasContainer.innerHTML = "<p>Ocurrió un error al cargar las recetas.</p>";
+            });
     }
 
-    // Evento para manejar la búsqueda
-    formBusqueda.addEventListener("submit", async (event) => {
-        event.preventDefault(); // Evitar el comportamiento por defecto
-        const query = inputBusqueda.value.trim().toLowerCase(); // Convertir a minúsculas
-        if (query === "") {
-            alert("Por favor, ingresa un término de búsqueda.");
-            return;
-        }
+    function mostrarRecetas(recetas) {
+        recetas.forEach(function(receta) {
+            const recetaHTML = `
+                <a href="./receta.html?id=${receta.id}">
+                    <article>
+                        <img src="${receta.image}" alt="${receta.name}">
+                        <p>${receta.name}</p>
+                        <p>${receta.difficulty}</p>
+                    </article>
+                </a>
+                `;
+            recetasContainer.innerHTML += recetaHTML;
+        });
+    }
 
-        try {
-            // Llamar a la API para obtener las recetas
-            const response = await fetch(`https://dummyjson.com/recipes/search?q=${query}`);
-            const data = await response.json();
-
-            if (response.ok) {
-                renderRecetas(data.recipes || []);
-            } else {
-                console.error("Error al buscar recetas:", data.message);
-                recetasContainer.innerHTML = "<p>Ocurrió un error al realizar la búsqueda.</p>";
-            }
-        } catch (error) {
-            console.error("Error de red o API:", error);
-            recetasContainer.innerHTML = "<p>Ocurrió un error al conectarse con el servidor.</p>";
+    formBusqueda.addEventListener("submit", function(event) {
+        event.preventDefault(); 
+        const busqueda = inputBusqueda.value; 
+        if (busqueda) {
+            recetasContainer.innerHTML = ""; 
+            paginaActual = 1; 
+            cargarRecetas(busqueda, paginaActual);
+            btnCargarMas.style.display = "block"; 
         }
     });
+
+    btnCargarMas.addEventListener("click", function() {
+        const busqueda = inputBusqueda.value; 
+        paginaActual++;
+        cargarRecetas(busqueda, paginaActual);
+    });
+
+    const params = new URLSearchParams(window.location.search);
+    const busquedaInicial = params.get("buscador");
+    if (busquedaInicial) { 
+        inputBusqueda.value = busquedaInicial; 
+        cargarRecetas(busquedaInicial, paginaActual); 
+    } else { 
+        cargarRecetas(); 
+    };
 });
