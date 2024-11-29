@@ -1,51 +1,46 @@
 const loginForm = document.querySelector(".formLogin");
-const buscadorIndex = document.getElementById("form-busqueda");
+const buscadorIndex = document.querySelector("form-busqueda");
 
 loginForm.addEventListener('submit', function(event) {
-    const email = document.getElementById('email').value.trim()
-    const password = document.getElementById('password').value.trim()
-    const terminos = document.getElementById('terminos').checked;
+    const email = document.querySelector('email').value;
+    const password = document.querySelector('password').value;
+    const terminos = document.querySelector('terminos').checked;
 
-    let errorMensaje = "";
-
-    if (email === "") {
-        errorMensaje += "Ingrese su correo eletrónico"
-        document.getElementById('errorMensaje').style.display = "block";
-        document.getElementById('errorMensaje').innerHTML = errorMensaje;
+    if (email == "") {
+        errores("E-Mail Invalido");
         event.preventDefault();
-        return;
     }
 
-    if (password === "") {
-        errorMensaje += "Ingrese su contraseña"
-        document.getElementById('errorMensaje').style.display = "block";
-        document.getElementById('errorMensaje').innerHTML = errorMensaje;
+    if (password == "") {
+        errores("Contraseña Invalida");
         event.preventDefault();
-        return;
     }
 
     if (!terminos) {
-        errorMensaje += "Acepte los Terminos y Condiciones"
-        document.getElementById('errorMensaje').style.display = "block";
-        document.getElementById('errorMensaje').innerHTML = errorMensaje;
+        errores("Aceptar TyC");
         event.preventDefault();
-        return;
     }
 });
 
+let errorMensaje = "";
+
+function errores(msj) {
+    errorMensaje += msj
+    document.querySelector('errorMensaje').style.display = "block";
+    document.querySelector('errorMensaje').innerHTML = errorMensaje;
+}
+
 buscadorIndex.addEventListener('submit', function(event) {
 
-    const inputBusqueda = document.getElementById('input-busqueda').value.trim();
+    const inputBusqueda = document.querySelector('input-busqueda').value;
 
-    if (inputBusqueda === "") {
+    if (inputBusqueda == "") {
         alert("El buscador esta vacío, probá poniendo texto.");
         event.preventDefault();
-        return;
     }
 
     if (inputBusqueda.length <= 3) {
         alert("Acordate que el buscador tiene que tener más de 3 caracteres.");
         event.preventDefault();
-        return;
     }
 });
