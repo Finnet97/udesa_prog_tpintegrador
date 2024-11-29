@@ -71,6 +71,15 @@ botonCargarMas.addEventListener("click", function() {
     });
 });
 
+document.addEventListener("DOMContentLoaded", () => {
+    const hamburguerMenu = document.querySelector(".hamburguer-menu");
+    const menu = document.querySelector(".menu");
+
+    hamburguerMenu.addEventListener("click", () => {
+        menu.style.display = menu.style.display === "block" ? "none" : "block";
+    });
+});
+
 buscadorIndex.addEventListener('submit', function(event) {
 
     const inputBusqueda = document.querySelector('input-busqueda').value;

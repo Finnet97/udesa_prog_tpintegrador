@@ -60,8 +60,15 @@ header, footer {
 
 .menu {
     list-style: none;
-    display: flex;
+    display: none; /* Inicia oculto */
+    flex-direction: column; /* Para que se muestre en lista */
     gap: 20px;
+    background-color: #cfa37f; /* Color de fondo opcional */
+    padding: 15px;
+    position: absolute; /* Flotante sobre el contenido */
+    right: 10px;
+    top: 60px; /* Ajusta según la altura de tu navbar */
+    z-index: 1000;
 }
 
 .menu a {
