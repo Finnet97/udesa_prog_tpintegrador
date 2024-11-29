@@ -71,7 +71,7 @@ fetch(`https://dummyjson.com/recipes/${recetaID}`)
 
 buscadorIndex.addEventListener('submit', function(event) {
 
-    const inputBusqueda = document.querySelector('input-busqueda').value.trim();
+    const inputBusqueda = document.querySelector('input-busqueda').value;
 
     if (inputBusqueda === "") {
         alert("El buscador esta vacío, probá poniendo texto.");
