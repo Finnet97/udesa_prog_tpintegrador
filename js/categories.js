@@ -2,8 +2,8 @@ const categoriesPerPress = 12;
 let startIndex = 0; 
 
 const categoriaContainer = document.querySelector(".categories");
-const btnCargarMasCats = document.getElementById("btn-cargar-mas-categories");
-const buscadorIndex = document.getElementById("form-busqueda");
+const btnCargarMasCats = document.querySelector("btn-cargar-mas-categories");
+const buscadorIndex = document.querySelector("form-busqueda");
 
 fetch(`https://dummyjson.com/recipes/tags`)
     .then(function(response) {
@@ -50,7 +50,7 @@ function cargarCategorias(data) {
 
 buscadorIndex.addEventListener('submit', function(event) {
 
-    const inputBusqueda = document.getElementById('input-busqueda').value.trim();
+    const inputBusqueda = document.querySelector('input-busqueda').value.trim();
 
     if (inputBusqueda === "") {
         alert("El buscador esta vacío, probá poniendo texto.");

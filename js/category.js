@@ -1,10 +1,10 @@
-const buscadorIndex = document.getElementById("form-busqueda");
+const buscadorIndex = document.querySelector("form-busqueda");
 
 const urlParams = new URLSearchParams(window.location.search);
 const selectedCategory = urlParams.get("category");
 
 if (selectedCategory) {
-    document.getElementById("categoria-nombre").textContent = selectedCategory
+    document.querySelector("categoria-nombre").textContent = selectedCategory
 }
 
 let aIndex = 0;
@@ -60,15 +60,15 @@ if (selectedCategory) {
                 aIndex += recetasPorPagina;
 
                 if (aIndex >= recetasFiltradas.length){
-                    document.getElementById("cargarMas").style.display = 'none';
+                    document.querySelector("cargarMas").style.display = 'none';
                 } else {
-                    document.getElementById("cargarMas").style.display = 'block';
+                    document.querySelector("cargarMas").style.display = 'block';
                 }
             }
 
             cargarRecetas();
 
-            document.getElementById("cargarMas").addEventListener('click', cargarRecetas);
+            document.querySelector("cargarMas").addEventListener('click', cargarRecetas);
 
         })
         .catch(function(error) {
@@ -84,7 +84,7 @@ if (selectedCategory) {
 
 buscadorIndex.addEventListener('submit', function(event) {
 
-    const inputBusqueda = document.getElementById('input-busqueda').value.trim();
+    const inputBusqueda = document.querySelector('input-busqueda').value.trim();
 
     if (inputBusqueda === "") {
         alert("El buscador esta vacío, probá poniendo texto.");

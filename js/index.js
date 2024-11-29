@@ -2,8 +2,8 @@ let currentPage = 1;
 const recipesPerPage = 12;
 
 const recetaList = document.querySelector(".recetas-container");
-const botonCargarMas = document.getElementById("btn-cargar-mas");
-const buscadorIndex = document.getElementById("form-busqueda");
+const botonCargarMas = document.querySelector("btn-cargar-mas");
+const buscadorIndex = document.querySelector("form-busqueda");
 
 fetch(`https://dummyjson.com/recipes?skip=0&limit=${recipesPerPage}`)
 .then(function(response) {
@@ -73,7 +73,7 @@ botonCargarMas.addEventListener("click", function() {
 
 buscadorIndex.addEventListener('submit', function(event) {
 
-    const inputBusqueda = document.getElementById('input-busqueda').value.trim();
+    const inputBusqueda = document.querySelector('input-busqueda').value.trim();
 
     if (inputBusqueda === "") {
         alert("El buscador esta vacío, probá poniendo texto.");

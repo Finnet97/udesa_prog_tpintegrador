@@ -1,5 +1,5 @@
 
-const buscadorIndex = document.getElementById("form-busqueda");
+const buscadorIndex = document.querySelector("form-busqueda");
 
 let qs = location.search;
 let qsObj = new URLSearchParams(qs);
@@ -71,7 +71,7 @@ fetch(`https://dummyjson.com/recipes/${recetaID}`)
 
 buscadorIndex.addEventListener('submit', function(event) {
 
-    const inputBusqueda = document.getElementById('input-busqueda').value.trim();
+    const inputBusqueda = document.querySelector('input-busqueda').value.trim();
 
     if (inputBusqueda === "") {
         alert("El buscador esta vacío, probá poniendo texto.");

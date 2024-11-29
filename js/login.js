@@ -1,10 +1,10 @@
 
 const loginForm = document.querySelector(".formLogin");
-const buscadorIndex = document.getElementById("form-busqueda");
+const buscadorIndex = document.querySelector("form-busqueda");
 
 loginForm.addEventListener('submit', function(event) {
-    const email = document.getElementById('email').value.trim();
-    const password = document.getElementById('password').value.trim();
+    const email = document.querySelector('email').value.trim();
+    const password = document.querySelector('password').value.trim();
 
     if (email === "") {
         alert("El campo del e-mail no puede estar vacío");
@@ -22,7 +22,7 @@ loginForm.addEventListener('submit', function(event) {
 
 buscadorIndex.addEventListener('submit', function(event) {
 
-    const inputBusqueda = document.getElementById('input-busqueda').value.trim();
+    const inputBusqueda = document.querySelector('input-busqueda').value.trim();
 
     if (inputBusqueda === "") {
         alert("El buscador esta vacío, probá poniendo texto.");
